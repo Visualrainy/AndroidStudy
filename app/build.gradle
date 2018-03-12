@@ -19,6 +19,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    signingConfigs {
+        release
+    }
+
+    def keyFile = rootProject.file("keystore.properties")
+    def props = new Properties()
+    if (keyFile.exists() && keyFile.canRead()) {
+        props.load(new FileInputStream(keyFile))
+        android.signingConfigs.release.storeFile = file(props['storeFile'])
+        android.signingConfigs.release.storePassword = props['storePassword']
+        android.signingConfigs.release.keyAlias = props['keyAlias']
+        android.signingConfigs.release.keyPassword = props['keyPassword']
+    }
 }
 
 dependencies {
