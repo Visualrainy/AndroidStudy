@@ -1,0 +1,8 @@
+group = "app"
+version = "1.0"
+
+ext {
+    appDependencies = [
+        archExtensions: 'android.arch.lifecycle:extensions:1.1.0'
+    ]
+}
