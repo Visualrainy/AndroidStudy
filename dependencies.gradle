@@ -1,8 +1,28 @@
-group = "app"
-version = "1.0"
-
 ext {
+    //similar with ext.version = []
+    version = [
+            supportLibraryVersion: '26.1.0',
+            archVersion: '1.1.0'
+    ]
+
+    googleDependencies = [
+            support_compat:         "com.android.support:appcompat-v7:${version.supportLibraryVersion}",
+            constraint_layout:      'com.android.support.constraint:constraint-layout:1.0.2',
+            arch_extensions:        "android.arch.lifecycle:extensions:${version.archVersion}",
+            arch_viewmodel:         "android.arch.lifecycle:viewmodel:${version.archVersion}",
+            arch_livedata:          "android.arch.lifecycle:viewmodel:${version.archVersion}",
+            arch_compiler:          "android.arch.lifecycle:compiler:${version.archVersion}",
+            arch_common:            "android.arch.lifecycle:common-java8:${version.archVersion}",
+            arch_reactivestreams:   "android.arch.lifecycle:reactivestreams:${version.archVersion}"
+    ]
+
     appDependencies = [
-        archExtensions: 'android.arch.lifecycle:extensions:1.1.0'
+            kotlin_stdlib:          "org.jetbrains.kotlin:kotlin-stdlib-jre7:${kotlin_version}"
+    ]
+
+    testDependencies = [
+            junit:                  'junit:junit:4.12',
+            test_runner:            'com.android.support.test:runner:1.0.1',
+            test_espresso:          'com.android.support.test.espresso:espresso-core:3.0.1'
     ]
 }

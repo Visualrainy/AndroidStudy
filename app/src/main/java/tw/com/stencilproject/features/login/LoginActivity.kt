@@ -13,10 +13,12 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val base = application.baseContext
-        test.text = "123";
+        test.text = "123"
         val declaredField = base.javaClass.getDeclaredField("mPackageInfo")
         declaredField.isAccessible = true
         val packageInfo = declaredField.get(base)
+
+//        Thread.sleep(20000)
 
         Log.d("Testing: ", packageInfo.toString())
     }
