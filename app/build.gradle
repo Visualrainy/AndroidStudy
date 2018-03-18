@@ -47,7 +47,7 @@ dependencies {
     // ViewModel and LiveData
     implementation "${googleDependencies.arch_extensions}"
     // alternatively, just ViewModel
-    implementation "${googleDependencies.arch_viewmodel}"
+    implementation googleDependencies.arch_viewmodel
     // alternatively, just LiveData
     implementation "${googleDependencies.arch_livedata}"
 
